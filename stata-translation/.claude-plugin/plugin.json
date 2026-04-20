@@ -1,0 +1,8 @@
+{
+  "name": "stata-translation",
+  "description": "A plugin to assist translation of Stata code to R and Python",
+  "version": "0.0.1",
+  "author": {
+    "name": "Stephen Thompson"
+  }
+}
