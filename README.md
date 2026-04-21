@@ -1,17 +1,25 @@
-A Claude plugin to aid translation of Stata packages to R packages
+A Claude plugin to aid translation of Stata packages to other software languages. 
+The aim is to increase the impact of well written and tested Stata packages by 
+translating them to more widely used programming languages. Primarily R and Python. 
+The plugin consists of multiple skills that can either be run in isolation or as a 
+complete workflow.
 
-Based on https://github.com/ArabelaTso/Skills-4-SE/blob/main/skills/module-level-code-translator/SKILL.md
-
-```
 # start claude code with path to plugin
-claude --plugin-dir $filepath
+claude --plugin-dir $filepath/stata-translation
 ```
 
-run a specific skill
+# Strategy
+
+## 1. Start by examing the Stata package and ask whether it is worth translating to R, Python or other languages
 ```
-/stata-translation:stata-to-r-translator
+/stata-translation:translation-strategy
 ```
 
+## 2. Convert source code to pseudo code. 
+
+[Chen et al. 2026](https://ucl-arc.slack.com/files/U060G4B3M7C/F0ALJ6HE2BW/can_emulating_semantic_translation_help_llms_with_code_translation.pdf) report than translating code through a pseudocode intermediate step results in code that better fits the target langiage idioms, resulting in easier to maintain code. The pseudocode step also supports translating to multiple target langauges.
+
+```
 It took two prompts to get this to work properly 
 
 ```
@@ -38,4 +46,4 @@ use rstata within test-artbin-ssi-niss.R to replace hard coded values in expect_
 update test-correspondence.md now that we have test-artbin-ssi-niss.R
 ``` 
 
-There is a second skill `stata-to-r-translator_pc` which does the translation step via pseudocode as suggested by [Chen et al. 2026](https://ucl-arc.slack.com/files/U060G4B3M7C/F0ALJ6HE2BW/can_emulating_semantic_translation_help_llms_with_code_translation.pdf). Inspecting the code created shows differences between the two approaches, however these may be unrelated to the pseudocode method.
+Based on https://github.com/ArabelaTso/Skills-4-SE/blob/main/skills/module-level-code-translator/SKILL.md
