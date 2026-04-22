@@ -10,7 +10,7 @@ claude --plugin-dir $filepath/stata-translation
 
 # Strategy
 
-## 1. Start by examing the Stata package and ask whether it is worth translating to R, Python or other languages
+## 1. Start by examining the Stata package and ask whether it is worth translating to R, Python or other languages
 ```
 /stata-translation:translation-strategy
 ```
@@ -20,10 +20,11 @@ claude --plugin-dir $filepath/stata-translation
 [Chen et al. 2026](https://ucl-arc.slack.com/files/U060G4B3M7C/F0ALJ6HE2BW/can_emulating_semantic_translation_help_llms_with_code_translation.pdf) report than translating code through a pseudocode intermediate step results in code that better fits the target langiage idioms, resulting in easier to maintain code. The pseudocode step also supports translating to multiple target langauges.
 
 ```
-It took two prompts to get this to work properly 
+/stata-translation:stata-to-pseudocode
+```
 
 ```
-/stata-translation:stata-to-r-translator
+/stata-translation:pseudocode-to-r
 #followed by
 why did you not follow the instructions in stata-to-r-translator/SKILL.md  
 ```
