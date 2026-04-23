@@ -40,4 +40,5 @@ Look through the source files in the package for any additional documentation or
 - Add a contributing guide to the r package
 - Add a github workflow to run r tests on push to main, pull requests, and workflow dispatch
 - add a .gitignore to r package
+- Add a README to the r package
 
