@@ -78,4 +78,22 @@ Stata2Python/
 └── recommendation.md
 ```
 
+### Stata.md
 We start by looking at `stata.md` which contains a summary of the current Stata package. 
+
+#### Important Questions
+ - Has Claude provided an accurate summary of what the Stata package does. If not then it may be possible to interactively improve this by prompting Claude.
+ - We asked Claude to assess the completeness of the Stata package. A package missing documentation, tests, and examples is going to result in a less accurate translation.
+ - You can then look in more detail at the algorithm details to see if Claude has correctly summarised these.
+
+### Stata2R and Stata2Python
+We then asked Claude to look at options for code translation. We explicitly 
+requested looking at the R and Python languages as these are widely used by 
+researchers, but we also asked Claude to recommend other relevant languages.
+
+The `-landscape.md` files summarises what other packages and libraries already 
+exist in that ecosystem. 
+- If there is already a widely used library that does what our Stata package does then there isn't much point proceeding with the translating the code. 
+- Perhaps there is an existing library that we could contribute to rather than creating a new library. 
+
+The `-recommendation.md` files contain Claude's recommendation as to whether we should translate the code and what form any translation should take. Do the recommendations make sense?
