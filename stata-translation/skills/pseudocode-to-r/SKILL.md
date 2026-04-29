@@ -35,6 +35,8 @@ Compare the documentation in the .sthlp and examples/ directory with the R direc
 
 Look through the source files in the package for any additional documentation or history information and port it to the R package.
 
+Use examples to create vignettes
+
 ### 5. Add open source infrastructure
 - Copy the license file from the original package to the r package.
 - Add a contributing guide to the r package

@@ -4,6 +4,12 @@ translating them to more widely used programming languages. Primarily R and Pyth
 The plugin consists of multiple skills that can either be run in isolation or as a 
 complete workflow.
 
+The plugin will attempt to use a language service protocol (LSP) to aid coding with R. For this to work you should install the languageserver before running the skill.
+
+```
+install.packages("languageserver")
+```
+
 # start claude code with path to plugin
 claude --plugin-dir $filepath/stata-translation
 ```

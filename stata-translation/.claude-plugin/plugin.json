@@ -3,6 +3,22 @@
   "description": "A plugin to assist translation of Stata code to R and Python",
   "version": "0.0.1",
   "author": {
-    "name": "Stephen Thompson"
+    "name": "Stephen Thompson",
+    "email": "s.thompson@ucl.ac.uk"
+  },
+  "license" : "Apache",
+  "repository" : "https://github.com/stata-translations/Stata2R",
+  "lspServers": {
+    "r": {
+      "command": "R",
+      "args": ["--no-echo", "-e", "languageserver::run()"],
+      "transport": "stdio",
+      "extensionToLanguage": {
+        ".R": "r",
+        ".Rmd": "rmd",
+        ".qmd": "rmd"
+      },
+      "maxRestarts": 3
+    }
   }
 }
