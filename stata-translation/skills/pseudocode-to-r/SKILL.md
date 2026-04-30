@@ -6,18 +6,22 @@ description: Translate pseudocode package to an R package whilst preserving beha
 # Pseudocode to R 
 
 Prompt the user for a location to create the new package. Suggest {../package-name R}
-## 1. Code translation
+
+## 1. Setup
+- Use renv to create a local environment and use this to install any required packages.
+- Install the languageserver package to enable R LSP
+
+## 2. Code translation
 Translate the code in the pseudocode directory to an R package, whilst preserving behaviour, adapting idioms, and generating verification tests.
-- Use the renv package to create and manage a local environment throughout. 
 - Preserve original behaviour exactly
 - Follow R tidyverse language idioms and conventions 
 - Maintain code structure when possible.
 - Add appropriate R error handling.
 - Include necessary imports and dependencies
 
-## 2. Create a Shiny GUI to recreate any dlg files in the package directory.
+## 3. Create a Shiny GUI to recreate any dlg files in the package directory.
 
-## 3. Generate Tests
+## 4. Generate Tests
 
 Create tests to verify package functions:
 
@@ -29,7 +33,7 @@ Create tests to verify package functions:
    - Integration between components
 
 
-## 4. Complete Documentation
+## 5. Complete Documentation
 
 Compare the documentation in the .sthlp and examples/ directory with the R directory. Port any missing elements from stata to the R package.
 
@@ -37,7 +41,7 @@ Look through the source files in the package for any additional documentation or
 
 Use examples to create vignettes
 
-### 5. Add open source infrastructure
+### 6. Add open source infrastructure
 - Copy the license file from the original package to the r package.
 - Add a contributing guide to the r package
 - Add a github workflow to run r tests on push to main, pull requests, and workflow dispatch

@@ -1,5 +1,5 @@
 ---
-name: add-missing-tests
+name: add-stata-tests-r
 description: Iterates through each file in stata testing directory, summarises matching tests in R, adds missing tests, and summarises again. runs when user askes to "compare tests"
 ---
 
