@@ -108,13 +108,62 @@ optimal approach will change anyway.
 
 We have chosen to follow a strategy of converting the Stata code to pseudocode, 
 deliberately excluding the test directory and including any documentation/examples.
-The pseudocode step is intended to increase the likelihood of code comprehension, as 
-shown by [Chen et al.](https://doi.org/10.1145/3790101). Adding the pseudocode step
-also supports the translation to multiple target languages of we elect to do that.
+The pseudocode step is used for three reasons:
+ - It has been shown to increase the likelihood of code comprehension, see [Chen et al.](https://doi.org/10.1145/3790101).
+ - It enables statisticians without R expertise to review the code before proceeding.
+ - It supports the translation to multiple target languages of we elect to do that.
+
 Excluding the test 
 directory enables us to use the tests to validate the translation in a subsequent step.  
 Run the `stata-to-pseudocode` skill
 ```
 /stata-translation:translation-strategy
 ```
+This skill will create a `pseudocode` directory containing Markdown file/s describing the 
+Stata code in pseudocode. Take the time to review this code for correctness before proceeding.
+
+## Pseudocode to R
+
+Run
+```
+/stata-translation:pseudocode-to-r
+```
+You should be prompted for a directory location to create the new R-package. You may 
+want this to a subdirectory of the current directory, which may be useful if you want to keep
+everything in the same repository. Alternatively you can create a separate directory if you 
+want to create a new repository for the R package.
+
+The translation will attempt to translate the package code, replace any Stata dialog boxes with 
+a R-Shiny GUI, and port any documentation and examples to R. 
+A suite of tests should also be generated. Note that these are not based on the original tests from 
+the Stata package, but are Claude's own invention. 
+
+Finally the R directory should be populated with infrastructure files to support an opensource package and
+submission to CRAN if appropriate.
+
+Explore the R directory structure. Pay particular attention to the vignettes directory which should have 
+replicated any usage examples from Stata. Does the package still purport to do what you think it should? 
+Start rstudio and see if you can follow the vignette successfully.
+
+The translation should have also created a `.github/workflows` directory. If you host the repository on GitHub these will run automatically each time you push updates to GitHub. Try this now.
+
+## Add in original Stata tests.
+In this step we return to the original Stata tests. We can run them from R using the rstata package, and compare their output to those from R. The `add-stata-tests-r` can do this for us.
+```
+/stata-translation:add-stata-tests-r
+```
+Depending on where your Stata executable is located Claude may need you help to find it. It is quite likely at this stage that some small errors may be found in the translation, so pay close attention to Claude's output and any prompts.
+
+At the end of the process there should be new tests in the tests directory along with a document named `test-correspondence.md`. Read through the test correspondence document. Are you confident that all the original tests written in Stata have a corresponding test in R? Which tests are missing? 
+
+# Next Steps
+
+You should now have a translation of the Stata package in R. Try using it. Keep a note of any bugs or discrepancies with the Stata package you find. Discuss the process with others and ask questions. 
+
+# Todo
+
+If the recommendation was translate to a different language we could try that. There is a `pseudocode-to-python` skill [here](https://github.com/ArabelaTso/Skills-4-SE/tree/main/skills/pseudocode-to-python-code) which may be a good place to start. 
+Agent based coding and code translation is a very fast moving field, so it would be worth reviewing any 
+new developments. 
+
 
