@@ -96,4 +96,25 @@ exist in that ecosystem.
 - If there is already a widely used library that does what our Stata package does then there isn't much point proceeding with the translating the code. 
 - Perhaps there is an existing library that we could contribute to rather than creating a new library. 
 
-The `-recommendation.md` files contain Claude's recommendation as to whether we should translate the code and what form any translation should take. Do the recommendations make sense?
+The `-recommendation.md` files contain Claude's recommendation as to whether we should translate the code and what form any translation should take. Do the recommendations make sense? 
+
+The rest of this workshop assumes that the recommendation was to create a stand alone R package. You may need to tailor the approach based on the recommendations. 
+
+## Translating R code to pseudo code. 
+Whether there is an optimal way to perform code translation is currently unknown 
+and likely to be specific to a particular use case. Given the rate of change 
+in coding agents and the large language models that underpin them it is likely the 
+optimal approach will change anyway. 
+
+We have chosen to follow a strategy of converting the Stata code to pseudocode, 
+deliberately excluding the test directory and including any documentation/examples.
+The pseudocode step is intended to increase the likelihood of code comprehension, as 
+shown by [Chen et al.](https://doi.org/10.1145/3790101). Adding the pseudocode step
+also supports the translation to multiple target languages of we elect to do that.
+Excluding the test 
+directory enables us to use the tests to validate the translation in a subsequent step.  
+Run the `stata-to-pseudocode` skill
+```
+/stata-translation:translation-strategy
+```
+
