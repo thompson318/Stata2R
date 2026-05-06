@@ -3,7 +3,7 @@ The aim is to increase the impact of well written and tested Stata packages by
 translating them to more widely used programming languages. Primarily R and Python. 
 The plugin consists of multiple skills that can either be run in isolation or as a 
 complete workflow. Brief usage instructions are below, or you can refer to the 
-[docs/workshop.md] for more in depth information.
+[workshop](docs/workshop.md) for more in depth information.
 
 # Installation
 ```
