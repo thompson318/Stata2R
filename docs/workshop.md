@@ -117,7 +117,7 @@ Excluding the test
 directory enables us to use the tests to validate the translation in a subsequent step.  
 Run the `stata-to-pseudocode` skill
 ```
-/stata-translation:translation-strategy
+/stata-translation:stata-to-pseudocode
 ```
 This skill will create a `pseudocode` directory containing Markdown file/s describing the 
 Stata code in pseudocode. Take the time to review this code for correctness before proceeding.
