@@ -23,13 +23,14 @@ complete workflow. Brief usage instructions are below, or you can refer to the
 
 ```
 /stata-translation:stata-to-pseudocode
+```
 
 ## 3. Pseducode To R
 ```
 /stata-translation:pseudocode-to-r
 ```
 
-## 4. Confirm test correspondence
+## 4. Add all tests and Confirm test correspondence
 ```
 /stata-translation:add-stata-tests-r
 ```
