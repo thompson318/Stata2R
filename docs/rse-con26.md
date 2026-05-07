@@ -4,23 +4,24 @@ Code Translation using Large Language Models: What's the role Research Software 
 
 ## Abstract
 [250 words.]: #
-Code translation may significantly enhance the research impact of existing code by making the code accessible to a greater range of researchers.
-Language choice is usually influenced by research domain, so the ability to port code written in one language to another may enable researchers to reach new users outside their own research domain.
-Translation requires skills in the source and target language, and the research domain.
-The combination of skills required makes it unlikely that an individual researcher or RSE will be able to perform code translation.
-Large language models (LLM) can support translation between languages by amalgamating language and domain specific knowledge from many sources.
-Research software engineers play a role in this by implementing best practice methods in translation and providing tools to validate the resulting code. 
+Translating research code to other programming language enables
+ researchers to reach beyond their own domain, increasing research impact and 
+guarding against software obsolescence.
+Translation requires skills in the source and target language, and the research domain making it unlikely
+ that any individual will be able to perform translation.
+Large language models (LLM) support translation by amalgamating language and domain specific knowledge from many sources.
+RSEs play a role in this by implementing best practice methods and providing validation tools.
 
-We will discuss our experiences in developing a plugin for Claude Code to enable domain
-experts in statistics to translate code written in Stata to R and Python packages.  
-The plugin implements 4 skills that the user implements in sequence;
-1. Analyse and plan: Is the package well enough documented and tested to support translation? Which language(s) to target? Create a new library or contribute to an existing library?
-1. Translation to pseudocode: Intermediate translation to pseudocode to support human review without expertise in target language(s). This translation deliberately excludes any existing tests.  
-1. Translation from pseudocode target language(s): Translate to the target language; add infrastructure to support ongoing opensource development (CI testing, contributing guidelines, review licenses)  
-1. Port tests and documentation: Review existing Stata tests, implement in target language, and summarise test correspondce. Highlight any missing tests. Review Stata documentation (examples, papers), and translate to suitable format in target lanuguage (eg. Vignettes in R)  
+We will discuss our experiences in developing a Clause Code plugin that supports domain
+experts in statistics in translating Stata packages to R and Python.  
+The plugin implements 4 skills;
+1. Analyse and plan: Is the package well documented? Which target language(s)? Create a new library or contribute to an existing library?
+1. Translation to pseudocode: Translate to pseudocode to support human review without language expertise. Excludes any existing tests.  
+1. Pseudocode to target language(s): Translate; add infrastructure to support ongoing opensource development (CI testing, contributing guidelines, licenses)  
+1. Tests and documentation: Implement any existing Stata tests in target language; summarise test correspondence; highlight missing tests. Review documentation (examples, papers), and translate to target language (eg. Vignettes in R)  
  
-We used the plugin in a workshop with statisticians to translate a selection of Stata 
-packages. We will discuss our experiences in code translation and compare our results with the growing research body in this area. We aim to provoke informed discussion about the role of RSEs and LLMs in code translation.
+We used the plugin in workshops with statisticians to translate a selection of Stata 
+packages. We will discuss our experiences in code translation and compare our results with existing research in code translation. We aim to provoke informed discussion about the role of RSEs and LLMs in code translation.
 
 ## Prerequisates
 [150 words.]: #
