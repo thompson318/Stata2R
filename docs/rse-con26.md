@@ -13,9 +13,12 @@ Research software engineers play a role in this by implementing best practice me
 
 We will discuss our experiences in developing a plugin for Claude Code to enable domain
 experts in statistics to translate code written in Stata to R and Python packages.  
-The plugin implements a sequential approach asking questions like:
-Is the package worth translating? Could the code be contributed to an existing library? What language to translate to. Translation to pseudocode and human review. Translation from pseudocode to R and Python. Implementation of tests and documentation. Addition of opensource infrastructure to support ongoing development. The  
-
+The plugin implements 4 skills that the user implements in sequence;
+1. Analyse and plan: Is the package well enough documented and tested to support translation? Which language(s) to target? Create a new library or contribute to an existing library?
+1. Translation to pseudocode: Intermediate translation to pseudocode to support human review without expertise in target language(s). This translation deliberately excludes any existing tests.  
+1. Translation from pseudocode target language(s): Translate to the target language; add infrastructure to support ongoing opensource development (CI testing, contributing guidelines, review licenses)  
+1. Port tests and documentation: Review existing Stata tests, implement in target language, and summarise test correspondce. Highlight any missing tests. Review Stata documentation (examples, papers), and translate to suitable format in target lanuguage (eg. Vignettes in R)  
+ 
 We used the plugin in a workshop with statisticians to translate a selection of Stata 
 packages. We will discuss our experiences in code translation and compare our results with the growing research body in this area. We aim to provoke informed discussion about the role of RSEs and LLMs in code translation.
 
@@ -29,7 +32,7 @@ language models for translation.
 
 ## Outcomes
 [150 words.]: #
-Use of large coding agents using large language models is becoming an integral part of the 
+Use of coding agents built on large language models is becoming an integral part of the 
 research software engineering process. This talk aims to present a disinterested review of
 our experience, collating not just our experiences but also the experiences of our users. 
 Whilst seeking to avoid giving simple answers to complex questions, the talk will contribute
